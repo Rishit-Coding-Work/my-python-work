@@ -1,0 +1,62 @@
+
+import pandas as pd
+
+def budget_manager():    
+
+        
+        name = input("What's your name?") #input name 
+        balance = float(input("Enter your balance: ")) #input balance
+       
+        print("Hello", name + "!") #print name 
+        print("Your initial balance is:", balance) #print initial balance
+
+        expense_types = []
+        expense_amounts = []
+
+        for i in range(3):
+           
+                 
+            Type = str(input(f"Enter the type of expense# {i+1}:")) #input all the 3 expense type
+            Expense = float(input(f"Enter your expense# {i+1}:")) #input all the 3 expense
+
+            expense_types.append(Type)
+            expense_amounts.append(Expense)
+
+            print(f"Your expense type# {i+1}", Type)
+            print(f"Your expense amount# {i+1}", Expense) 
+
+    
+            if Expense > balance:
+             print(f"Insufficient balance# {i+1}")
+             return(i+1)
+
+            else:
+             print(f"Balance sufficient# {i+1}") 
+
+        df = pd.DataFrame({
+     "Expense Type": expense_types,
+     "Expense Amount": expense_amounts
+     })
+
+        
+        print(df)
+            
+            
+           
+budget_manager()
+  
+
+    
+
+
+
+
+
+
+ 
+     
+                             
+
+                
+                
+
